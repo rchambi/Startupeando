@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Startupeando.Services;
 
 namespace Startupeando
 {
@@ -21,8 +22,11 @@ namespace Startupeando
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IStartupFilter, CustomStartupFilter>();
+            services.AddTransient<IGreetingService, GreetingService>();
             services.AddHostedService<CustomHostedService>();
             services.AddControllers();
+            ////cuando se usa httpcontext -tema3
+            services.AddHttpContextAccessor();
         }
 
         //agregacioon de IHostApplicationLifetime

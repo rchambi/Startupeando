@@ -10,7 +10,8 @@ namespace Startupeando
         public Action<IApplicationBuilder> Configure(Action<IApplicationBuilder> next)
         {
             return app =>{
-                ApplyMigration(app);
+                // //caso migration
+                // ApplyMigration(app);
                 next(app);
                 //que se ejecuta despues del configure
             };

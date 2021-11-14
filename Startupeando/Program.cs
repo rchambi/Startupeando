@@ -19,9 +19,12 @@ namespace Startupeando
             var builer= CreateHostBuilder(args);
             var host= builer.Build();
 
-            ////se podria hacer el migration desde aqui justo despues de ejecutar ConfigureServices()        
-            using var scope= host.Services.CreateScope();      
-            var appDbContext= scope.ServiceProvider.GetRequiredService<AppDbContext>();
+            //////se podria hacer el migration desde aqui justo despues de ejecutar ConfigureServices()        
+            
+            //Si hay migration se puede descomentar esto 
+
+            // using var scope= host.Services.CreateScope();      
+            // var appDbContext= scope.ServiceProvider.GetRequiredService<AppDbContext>();
             // appDbContext.Database.Migrate();    //tiene q tener EF ya deberia estar toda la configuracion del EF en starup o startupDevelopment
 
             ///
