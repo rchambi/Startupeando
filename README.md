@@ -1,4 +1,4 @@
-# Startupeando
+# Startupeando, TaskCancelledException y HttpContext
 mejor uso de los Startup en Net core
 
 configuracion por ambiente      
